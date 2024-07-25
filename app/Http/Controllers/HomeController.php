@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\primer;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     function index()
     {
-        return view('user.index');
+      $data['getDat'] = primer::getDat();
+        return view('user.index', $data);
     }
 }
